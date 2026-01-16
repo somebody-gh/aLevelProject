@@ -1,0 +1,171 @@
+[gd_scene load_steps=36 format=3 uid="uid://681bker5aam2"]
+
+[ext_resource type="Script" path="res://Scenes/textColourMenu/TextColourSettings.cs" id="1_doxqr"]
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="1_tihot"]
+[ext_resource type="Texture2D" uid="uid://c7mvv8336t78e" path="res://Assets/Colour Buttons/base sprites/colour-button-black-png.png" id="3_vu18r"]
+[ext_resource type="Texture2D" uid="uid://cfhsj8sssdopm" path="res://Assets/Colour Buttons/depressed sprites/colour-button-black-depressed-png.png" id="4_nccn0"]
+[ext_resource type="Texture2D" uid="uid://pig13k1poum" path="res://Assets/Colour Buttons/hover sprites/colour-button-black-hover-png.png" id="5_5dfn4"]
+[ext_resource type="Texture2D" uid="uid://blny1m3ac7q3d" path="res://Assets/Colour Buttons/disabled sprites/colour-button-black-png-disabled-png.png" id="6_km3jl"]
+[ext_resource type="Texture2D" uid="uid://brsw4vff7xjrp" path="res://Assets/Colour Buttons/base sprites/colour-button-white-png.png" id="7_8gau5"]
+[ext_resource type="Texture2D" uid="uid://b283y12etl0el" path="res://Assets/Colour Buttons/depressed sprites/colour-button-white-depressed-png.png" id="8_pchiq"]
+[ext_resource type="Texture2D" uid="uid://duumf08fqkyve" path="res://Assets/Colour Buttons/hover sprites/colour-button-white-hover-png.png" id="9_vx7ec"]
+[ext_resource type="Texture2D" uid="uid://sb5i5cnfcbjk" path="res://Assets/Colour Buttons/disabled sprites/colour-button-white-disabled-png.png" id="10_m233p"]
+[ext_resource type="Texture2D" uid="uid://suuptsd2axkx" path="res://Assets/Colour Buttons/base sprites/colour-button-red-png.png" id="11_8bj64"]
+[ext_resource type="Texture2D" uid="uid://qnwkmvfn0dhj" path="res://Assets/Colour Buttons/depressed sprites/colour-button-red-depressed-png.png" id="12_vmu3e"]
+[ext_resource type="Texture2D" uid="uid://cl80rhy5j1fwn" path="res://Assets/Colour Buttons/hover sprites/colour-button-red-hover-png.png" id="13_01qbg"]
+[ext_resource type="Script" path="res://Assets/Universal Scripts/changeText.cs" id="13_p5lvi"]
+[ext_resource type="Texture2D" uid="uid://bddmkqqtht4cj" path="res://Assets/Colour Buttons/disabled sprites/colour-button-red-disabled-png.png" id="14_ocpmp"]
+[ext_resource type="Texture2D" uid="uid://buhbniuuik6tn" path="res://Assets/Colour Buttons/base sprites/colour-button-green-png.png" id="15_v1v20"]
+[ext_resource type="Texture2D" uid="uid://57c4yegf77bq" path="res://Assets/Colour Buttons/depressed sprites/colour-button-green-depressed-png.png" id="16_5n0i7"]
+[ext_resource type="Texture2D" uid="uid://bfmmdb80x0cv4" path="res://Assets/Colour Buttons/hover sprites/colour-button-green-hover-png.png" id="17_56xd7"]
+[ext_resource type="Texture2D" uid="uid://cplb8ce8mc2yb" path="res://Assets/Colour Buttons/disabled sprites/colour-button-green-disabled-png.png" id="18_6fiqu"]
+[ext_resource type="Texture2D" uid="uid://bnqj1vl2j20yw" path="res://Assets/Colour Buttons/base sprites/colour-button-skyblue-png.png" id="19_ptwr1"]
+[ext_resource type="Texture2D" uid="uid://ba2ljqprmx66y" path="res://Assets/Colour Buttons/depressed sprites/colour-button-sky-blue-depressed-png.png" id="20_88j1g"]
+[ext_resource type="Texture2D" uid="uid://dypadfddjceau" path="res://Assets/Colour Buttons/hover sprites/colour-button-sky-blue-hover-png.png" id="21_ugr5f"]
+[ext_resource type="Texture2D" uid="uid://cdm11a6rbuqf6" path="res://Assets/Colour Buttons/disabled sprites/colour-button-sky-blue-disabled-png.png" id="22_mg2si"]
+[ext_resource type="Texture2D" uid="uid://8yrgibpk540b" path="res://Assets/Colour Buttons/base sprites/colour-button-yellow-png.png" id="23_iaq7i"]
+[ext_resource type="Texture2D" uid="uid://bnssw34f3eghi" path="res://Assets/Colour Buttons/depressed sprites/colour-button-yellow-depressed-png.png" id="24_ribgc"]
+[ext_resource type="Texture2D" uid="uid://byegi3m5jaw3y" path="res://Assets/Colour Buttons/hover sprites/colour-button-yellow-hover-png.png" id="25_lvftl"]
+[ext_resource type="Texture2D" uid="uid://duhlcbxcrpdgv" path="res://Assets/Colour Buttons/disabled sprites/colour-button-yellow-disabled-png.png" id="26_cmlg7"]
+[ext_resource type="Texture2D" uid="uid://cabldgy0tpam4" path="res://Assets/Colour Buttons/base sprites/colour-button-pink-png.png" id="27_48jfw"]
+[ext_resource type="Texture2D" uid="uid://c7h3bh1ix0xld" path="res://Assets/Colour Buttons/depressed sprites/colour-button-pink-depressed-png.png" id="28_47w1y"]
+[ext_resource type="Texture2D" uid="uid://jno2b110f231" path="res://Assets/Colour Buttons/hover sprites/colour-button-pink-hover-png.png" id="29_bhb55"]
+[ext_resource type="Texture2D" uid="uid://consjxgf52bd8" path="res://Assets/Colour Buttons/disabled sprites/colour-button-pink-disabled-png.png" id="30_o5sw5"]
+[ext_resource type="Texture2D" uid="uid://c35kphprl1a3s" path="res://Assets/detailed-button/png files/detailed-base-button.png" id="31_iqnm1"]
+[ext_resource type="Texture2D" uid="uid://byhegp6glc1qe" path="res://Assets/detailed-button/png files/detailed-depressed-button.png" id="32_ncvbv"]
+[ext_resource type="Texture2D" uid="uid://6jhavdk4afae" path="res://Assets/detailed-button/png files/detailed-hover-button.png" id="33_4wkcx"]
+[ext_resource type="Texture2D" uid="uid://bbrvljaotydhg" path="res://Assets/detailed-button/png files/detailed-disabled-button.png" id="34_bv7gd"]
+
+[node name="textColourSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_doxqr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.760784, 0.760784, 0.760784, 1)
+
+[node name="exitButton" parent="CanvasLayer" instance=ExtResource("1_tihot")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Text Colour"
+fit_content = true
+autowrap_mode = 0
+
+[node name="exampleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Example Text"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="blackButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("3_vu18r")
+texture_pressed = ExtResource("4_nccn0")
+texture_hover = ExtResource("5_5dfn4")
+texture_disabled = ExtResource("6_km3jl")
+
+[node name="whiteButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("7_8gau5")
+texture_pressed = ExtResource("8_pchiq")
+texture_hover = ExtResource("9_vx7ec")
+texture_disabled = ExtResource("10_m233p")
+
+[node name="redButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("11_8bj64")
+texture_pressed = ExtResource("12_vmu3e")
+texture_hover = ExtResource("13_01qbg")
+texture_disabled = ExtResource("14_ocpmp")
+
+[node name="greenButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("15_v1v20")
+texture_pressed = ExtResource("16_5n0i7")
+texture_hover = ExtResource("17_56xd7")
+texture_disabled = ExtResource("18_6fiqu")
+
+[node name="skyBlueButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("19_ptwr1")
+texture_pressed = ExtResource("20_88j1g")
+texture_hover = ExtResource("21_ugr5f")
+texture_disabled = ExtResource("22_mg2si")
+
+[node name="yellowButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("23_iaq7i")
+texture_pressed = ExtResource("24_ribgc")
+texture_hover = ExtResource("25_lvftl")
+texture_disabled = ExtResource("26_cmlg7")
+
+[node name="pinkButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("27_48jfw")
+texture_pressed = ExtResource("28_47w1y")
+texture_hover = ExtResource("29_bhb55")
+texture_disabled = ExtResource("30_o5sw5")
+
+[node name="confirmationButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("31_iqnm1")
+texture_pressed = ExtResource("32_ncvbv")
+texture_hover = ExtResource("33_4wkcx")
+texture_disabled = ExtResource("34_bv7gd")
+
+[node name="confirmationLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/confirmationButton"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Confirm"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("13_p5lvi")

@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://w0rt2agvxu1l"]
+
+[ext_resource type="Texture2D" uid="uid://c35kphprl1a3s" path="res://Assets/detailed-button/png files/detailed-base-button.png" id="1_8wqpj"]
+[ext_resource type="Texture2D" uid="uid://byhegp6glc1qe" path="res://Assets/detailed-button/png files/detailed-depressed-button.png" id="2_y3qf8"]
+[ext_resource type="Script" path="res://Scenes/complexityMenu/OffButton.cs" id="3_o3h82"]
+[ext_resource type="Texture2D" uid="uid://6jhavdk4afae" path="res://Assets/detailed-button/png files/detailed-hover-button.png" id="3_qxasx"]
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="4_3k8uj"]
+[ext_resource type="Texture2D" uid="uid://bbrvljaotydhg" path="res://Assets/detailed-button/png files/detailed-disabled-button.png" id="4_qn3ri"]
+[ext_resource type="Script" path="res://Scenes/complexityMenu/SimpleButton.cs" id="5_kntka"]
+[ext_resource type="Script" path="res://Assets/Universal Scripts/changeText.cs" id="5_p5ra0"]
+[ext_resource type="Script" path="res://Scenes/complexityMenu/ComplexButton.cs" id="6_i8f46"]
+
+[node name="complexitySettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.760784, 0.760784, 0.760784, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Room Complexity"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="offButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_8wqpj")
+texture_pressed = ExtResource("2_y3qf8")
+texture_hover = ExtResource("3_qxasx")
+texture_disabled = ExtResource("4_qn3ri")
+script = ExtResource("3_o3h82")
+
+[node name="offLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/offButton"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Off"
+script = ExtResource("5_p5ra0")
+
+[node name="simpleButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_8wqpj")
+texture_pressed = ExtResource("2_y3qf8")
+texture_hover = ExtResource("3_qxasx")
+texture_disabled = ExtResource("4_qn3ri")
+script = ExtResource("5_kntka")
+
+[node name="simpleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/simpleButton"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 121.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Simple"
+autowrap_mode = 0
+script = ExtResource("5_p5ra0")
+
+[node name="complexButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_8wqpj")
+texture_pressed = ExtResource("2_y3qf8")
+texture_hover = ExtResource("3_qxasx")
+texture_disabled = ExtResource("4_qn3ri")
+script = ExtResource("6_i8f46")
+
+[node name="complexLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/complexButton"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Complex"
+script = ExtResource("5_p5ra0")
+
+[node name="exitButton" parent="CanvasLayer" instance=ExtResource("4_3k8uj")]

@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://6g2brggvspd3"]
+
+[ext_resource type="Texture2D" uid="uid://c35kphprl1a3s" path="res://Assets/detailed-button/png files/detailed-base-button.png" id="1_rgsiy"]
+[ext_resource type="Texture2D" uid="uid://byhegp6glc1qe" path="res://Assets/detailed-button/png files/detailed-depressed-button.png" id="2_paojg"]
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="2_qqjxl"]
+[ext_resource type="Script" path="res://Scenes/mainMenu/SettingsButton.cs" id="3_ixkqt"]
+[ext_resource type="Texture2D" uid="uid://6jhavdk4afae" path="res://Assets/detailed-button/png files/detailed-hover-button.png" id="3_lvt65"]
+[ext_resource type="Script" path="res://Assets/Universal Scripts/changeText.cs" id="3_sgpyh"]
+[ext_resource type="Script" path="res://Scenes/mainMenu/GenerateButton.cs" id="3_u48cr"]
+
+[sub_resource type="Theme" id="Theme_krws2"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backgroundLayer" type="CanvasLayer" parent="."]
+
+[node name="backgroundColour" type="ColorRect" parent="backgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.760784, 0.760784, 0.760784, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="backgroundLayer"]
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="backgroundLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="RichTextLabel" parent="backgroundLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Main Menu"
+fit_content = true
+autowrap_mode = 0
+tab_size = 10
+shortcut_keys_enabled = false
+selection_enabled = true
+text_direction = 1
+
+[node name="menuButtonContainer" type="HBoxContainer" parent="backgroundLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="generateButton" type="TextureButton" parent="backgroundLayer/MarginContainer/VBoxContainer/menuButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+texture_normal = ExtResource("1_rgsiy")
+texture_pressed = ExtResource("2_paojg")
+texture_hover = ExtResource("3_lvt65")
+script = ExtResource("3_u48cr")
+
+[node name="generateLabel" type="RichTextLabel" parent="backgroundLayer/MarginContainer/VBoxContainer/menuButtonContainer/generateButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 160.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = SubResource("Theme_krws2")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Generate"
+script = ExtResource("3_sgpyh")
+
+[node name="settingsButton" type="TextureButton" parent="backgroundLayer/MarginContainer/VBoxContainer/menuButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("1_rgsiy")
+texture_pressed = ExtResource("2_paojg")
+texture_hover = ExtResource("3_lvt65")
+script = ExtResource("3_ixkqt")
+
+[node name="settingsLabel" type="RichTextLabel" parent="backgroundLayer/MarginContainer/VBoxContainer/menuButtonContainer/settingsButton"]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Settings
+"
+script = ExtResource("3_sgpyh")
+
+[node name="exitButton" parent="backgroundLayer" instance=ExtResource("2_qqjxl")]

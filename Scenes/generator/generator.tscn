@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://l02uti1nvth7"]
+
+[ext_resource type="Script" path="res://Scenes/generator/Generator.cs" id="1_cd5j6"]
+[ext_resource type="Script" path="res://Scenes/generator/MainCamera.cs" id="2_vbtea"]
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="3_ojod8"]
+
+[node name="Generator" type="Node2D"]
+script = ExtResource("1_cd5j6")
+
+[node name="mainCamera" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+script = ExtResource("2_vbtea")
+
+[node name="exitLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="exitLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="exitButton" parent="exitLayer" instance=ExtResource("3_ojod8")]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://jdh4cs4ribgs"]
+
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="1_ay7ne"]
+[ext_resource type="Script" path="res://Scenes/textSizeMenu/ExampleTextLabel.cs" id="2_rxjdc"]
+[ext_resource type="Texture2D" uid="uid://c35kphprl1a3s" path="res://Assets/detailed-button/png files/detailed-base-button.png" id="3_g7qi6"]
+[ext_resource type="Texture2D" uid="uid://byhegp6glc1qe" path="res://Assets/detailed-button/png files/detailed-depressed-button.png" id="4_g8xae"]
+[ext_resource type="Script" path="res://Assets/Universal Scripts/changeText.cs" id="5_11qoy"]
+[ext_resource type="Texture2D" uid="uid://6jhavdk4afae" path="res://Assets/detailed-button/png files/detailed-hover-button.png" id="5_jkdno"]
+[ext_resource type="Script" path="res://Scenes/textSizeMenu/ConfirmationButton.cs" id="6_8tol0"]
+[ext_resource type="Texture2D" uid="uid://bbrvljaotydhg" path="res://Assets/detailed-button/png files/detailed-disabled-button.png" id="6_70dpk"]
+
+[node name="textSizeSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.760784, 0.760784, 0.760784, 1)
+
+[node name="exitButton" parent="CanvasLayer" instance=ExtResource("1_ay7ne")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Text Size"
+fit_content = true
+autowrap_mode = 0
+
+[node name="exampleTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Example Text"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("2_rxjdc")
+
+[node name="textSizeSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 5.0
+max_value = 30.0
+value = 5.0
+
+[node name="confirmationButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture_normal = ExtResource("3_g7qi6")
+texture_pressed = ExtResource("4_g8xae")
+texture_hover = ExtResource("5_jkdno")
+texture_disabled = ExtResource("6_70dpk")
+script = ExtResource("6_8tol0")
+
+[node name="confirmationLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/confirmationButton"]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Confirm"
+script = ExtResource("5_11qoy")

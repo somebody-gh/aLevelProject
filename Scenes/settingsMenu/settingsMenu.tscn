@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnxj4sk1cv5ev"]
+
+[ext_resource type="Texture2D" uid="uid://c35kphprl1a3s" path="res://Assets/detailed-button/png files/detailed-base-button.png" id="1_6dest"]
+[ext_resource type="Texture2D" uid="uid://byhegp6glc1qe" path="res://Assets/detailed-button/png files/detailed-depressed-button.png" id="2_ys42a"]
+[ext_resource type="Script" path="res://Scenes/settingsMenu/GeneratorSettingsButton.cs" id="3_2a02g"]
+[ext_resource type="Texture2D" uid="uid://6jhavdk4afae" path="res://Assets/detailed-button/png files/detailed-hover-button.png" id="3_8srux"]
+[ext_resource type="PackedScene" uid="uid://6ehdakhkdfe1" path="res://Scenes/exitButton/exit_button.tscn" id="3_ykpdo"]
+[ext_resource type="Script" path="res://Scenes/settingsMenu/interfaceButton.cs" id="4_3qtrp"]
+[ext_resource type="Script" path="res://Assets/Universal Scripts/changeText.cs" id="4_lvyls"]
+
+[sub_resource type="Theme" id="Theme_krws2"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.762404, 0.762404, 0.762404, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="titleLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Settings"
+fit_content = true
+autowrap_mode = 0
+tab_size = 10
+shortcut_keys_enabled = false
+selection_enabled = true
+text_direction = 1
+
+[node name="menuButtonContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="generatorSettingsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/menuButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+texture_normal = ExtResource("1_6dest")
+texture_pressed = ExtResource("2_ys42a")
+texture_hover = ExtResource("3_8srux")
+script = ExtResource("3_2a02g")
+
+[node name="generatorSettingsLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/menuButtonContainer/generatorSettingsButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 160.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = SubResource("Theme_krws2")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.588235, 0, 0, 1)
+text = "Generator Settings"
+script = ExtResource("4_lvyls")
+
+[node name="interfaceSettingsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer/menuButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("1_6dest")
+texture_pressed = ExtResource("2_ys42a")
+texture_hover = ExtResource("3_8srux")
+script = ExtResource("4_3qtrp")
+
+[node name="interfaceSettingsLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/menuButtonContainer/interfaceSettingsButton"]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Interface Settings
+"
+script = ExtResource("4_lvyls")
+
+[node name="exitButton" parent="CanvasLayer" instance=ExtResource("3_ykpdo")]
+offset_right = -832.0
+offset_bottom = -368.0

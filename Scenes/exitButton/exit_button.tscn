@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ehdakhkdfe1"]
+
+[ext_resource type="Texture2D" uid="uid://cd5dthp6idn2w" path="res://Assets/exit_button_png/exit-button-base.png" id="1_2rw60"]
+[ext_resource type="Script" path="res://Scenes/exitButton/ExitButton.cs" id="1_ycaat"]
+[ext_resource type="Texture2D" uid="uid://cd5y2va02ebgp" path="res://Assets/exit_button_png/exit-button-depressed.png" id="2_3btqy"]
+[ext_resource type="Texture2D" uid="uid://bu88t0dddwhcx" path="res://Assets/exit_button_png/exit-button-hover.png" id="3_xbcy6"]
+
+[node name="exitButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1119.0
+offset_bottom = -613.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ycaat")
+
+[node name="animatedButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_2rw60")
+texture_pressed = ExtResource("2_3btqy")
+texture_hover = ExtResource("3_xbcy6")
